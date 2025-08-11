@@ -1,6 +1,6 @@
 `include "counter_inf.svh"
 
-module counter(counter_inf.DUT inf_i
+module counter(inf.DUT inf_i
 );
 
 always @(posedge inf_i.clk, negedge inf_i.rstN) begin

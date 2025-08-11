@@ -1,3 +1,6 @@
+`include "Driver.svh"
+`include "Generator.svh"
+`include "transction.svh"
 class environment;
 generator gen;
 driver drv;
@@ -24,11 +27,18 @@ endfunction
         gen.main();
         drv.main();
     join_any
-        
     endtask
+
     task post_test();
     wait(gen.ended.triggered);
-    wait(gen.repeat_count==drv.num_transaction);
+    wait(gen.repeat_count==drv.num_transaction);  
+    endtask
+
+    task run();
+    pre_test();
+    test();
+    post_test();
+    $finish;
         
     endtask
 
