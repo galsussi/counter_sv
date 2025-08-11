@@ -1,4 +1,4 @@
-class Driver;
+class driver;
 
 virtual inf vinf
 mailbox gen2drv;
